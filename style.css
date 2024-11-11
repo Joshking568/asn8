@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 1em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+header {
+  grid-area: header;
+  background-color: white;
+  color: black;
+  padding: 1em;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+nav {
+  grid-area: nav;
+  background-color: white;
+  padding: 1em;
+  color: black;
+  border: 1px solid black;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0.5em 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  grid-area: main;
+  background-color: white;
+  padding: 1em;
+  color: black;
+  border: 1px solid black;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+aside {
+  grid-area: aside;
+  background-color: white;
+  padding: 1em;
+  color: black;
+  border: 1px solid black;
+}
+
+footer {
+  grid-area: footer;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 1em;
+  font-size: 1em;
+  border: 1px solid black;
+}
+
+/* Responsive layout for phone-sized screens */
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+
+  nav ul li {
+    text-align: center; /* Center links in nav */
+  }
+}
